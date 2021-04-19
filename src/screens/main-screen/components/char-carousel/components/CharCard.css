@@ -1,0 +1,12 @@
+.char-card {
+  display: inline-block;
+}
+
+.char-card__image {
+  width: 3em;
+  height: auto;
+}
+
+.char-card__image:hover {
+  width: 4em;
+}
