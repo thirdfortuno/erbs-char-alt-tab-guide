@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/erbs-char-alt-tab-guide/static/css/main.e0efeccf.chunk.css",
-    "main.js": "/erbs-char-alt-tab-guide/static/js/main.18a1bf68.chunk.js",
-    "main.js.map": "/erbs-char-alt-tab-guide/static/js/main.18a1bf68.chunk.js.map",
+    "main.js": "/erbs-char-alt-tab-guide/static/js/main.20390570.chunk.js",
+    "main.js.map": "/erbs-char-alt-tab-guide/static/js/main.20390570.chunk.js.map",
     "runtime-main.js": "/erbs-char-alt-tab-guide/static/js/runtime-main.d4ed636f.js",
     "runtime-main.js.map": "/erbs-char-alt-tab-guide/static/js/runtime-main.d4ed636f.js.map",
     "static/js/2.016a435e.chunk.js": "/erbs-char-alt-tab-guide/static/js/2.016a435e.chunk.js",
@@ -44,6 +44,6 @@
     "static/js/runtime-main.d4ed636f.js",
     "static/js/2.016a435e.chunk.js",
     "static/css/main.e0efeccf.chunk.css",
-    "static/js/main.18a1bf68.chunk.js"
+    "static/js/main.20390570.chunk.js"
   ]
 }
