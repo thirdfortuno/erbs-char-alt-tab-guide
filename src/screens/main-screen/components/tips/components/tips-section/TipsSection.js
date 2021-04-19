@@ -12,7 +12,7 @@ const TipsSection = (props) => {
             <li className="tips-section__tip">{tip}</li>
           ))
         ) : (
-          <p>REMIND ME TO ADD TIPS</p>
+          <></>
         )}
       </ul>
     </>

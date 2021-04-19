@@ -1,11 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import eyes from "../../../../assets/eyes/index";
-import { spitTips } from "./tools/tipHandler";
+import { fetchTipsFS } from "./tools/TipHandler";
 
 import "./Tips.css";
 import TipsSection from "./components/tips-section/TipsSection";
 
 const Tips = (props) => {
+  const [tipsGeneral, setTipsGeneral] = useState([]);
+  const [tipsEarly, setTipsEarly] = useState([]);
+  const [tipsMid, setTipsMid] = useState([]);
+  const [tipsLate, setTipsLate] = useState([]);
+  const [countersGeneral, setCountersGeneral] = useState([]);
+  const [countersEarly, setCountersEarly] = useState([]);
+  const [countersMid, setCountersMid] = useState([]);
+  const [countersLate, setCountersLate] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    fetchTipsFS(props.mainChar).then(
+      ({
+        tipsGeneral: a,
+        tipsEarly: b,
+        tipsMid: c,
+        tipsLate: d,
+        countersGeneral: e,
+        countersEarly: f,
+        countersMid: g,
+        countersLate: h,
+      }) => {
+        setTipsGeneral(a);
+        setTipsEarly(b);
+        setTipsMid(c);
+        setTipsLate(d);
+        setCountersGeneral(e);
+        setCountersEarly(f);
+        setCountersMid(g);
+        setCountersLate(h);
+      }
+    );
+    setLoading(false);
+  }, [setLoading, props.mainChar]);
+
   return (
     <div className="tips">
       <div className="tips__header">
@@ -16,16 +52,22 @@ const Tips = (props) => {
           alt=""
         />
       </div>
-      <h2>Tips</h2>
-      <TipsSection header="General" tipList={spitTips()} />
-      <TipsSection header="Early Game" tipList={spitTips()} />
-      <TipsSection header="Mid Game" tipList={spitTips()} />
-      <TipsSection header="Late Game" tipList={spitTips()} />
-      <h2>Counters</h2>
-      <TipsSection header="General" tipList={spitTips()} />
-      <TipsSection header="Early Game" tipList={spitTips()} />
-      <TipsSection header="Mid Game" tipList={spitTips()} />
-      <TipsSection header="Late Game" tipList={spitTips()} />
+      {loading ? (
+        <></>
+      ) : (
+        <>
+          <h2>Tips</h2>
+          <TipsSection header="General" tipList={tipsGeneral} />
+          <TipsSection header="Early Game" tipList={tipsEarly} />
+          <TipsSection header="Mid Game" tipList={tipsMid} />
+          <TipsSection header="Late Game" tipList={tipsLate} />
+          <h2>Counters</h2>
+          <TipsSection header="General" tipList={countersGeneral} />
+          <TipsSection header="Early Game" tipList={countersEarly} />
+          <TipsSection header="Mid Game" tipList={countersMid} />
+          <TipsSection header="Late Game" tipList={countersLate} />
+        </>
+      )}
     </div>
   );
 };
