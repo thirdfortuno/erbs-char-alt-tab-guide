@@ -4,6 +4,7 @@ import Tips from "./components/tips/Tips";
 import MainQuip from "./components/main-quip/MainQuip";
 import { mainQuips } from "../../strings/Quips";
 import { names } from "../../strings/CharList";
+import Credits from "./components/credits/Credits";
 
 import "./MainScreen.css";
 
@@ -32,6 +33,7 @@ const MainScreen = () => {
       <MainQuip char={mainChar} quip={mainQuip} />
       <CharCarousel selectChar={selectMainChar} />
       {charExists(mainChar) ? <Tips mainChar={mainChar}></Tips> : <></>}
+      <Credits />
     </div>
   );
 };

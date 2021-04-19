@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -b master -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -45,5 +45,5 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://thirdfortuno.github.io/erbs-char-alt-tab-guide"
+  "homepage": "https://erbsguide.net"
 }
