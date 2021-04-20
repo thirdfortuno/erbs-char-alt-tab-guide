@@ -57,15 +57,47 @@ const Tips = (props) => {
       ) : (
         <>
           <h2>Tips</h2>
-          <TipsSection header="General" tipList={tipsGeneral} />
-          <TipsSection header="Early Game" tipList={tipsEarly} />
-          <TipsSection header="Mid Game" tipList={tipsMid} />
-          <TipsSection header="Late Game" tipList={tipsLate} />
+          {tipsGeneral.length > 0 ? (
+            <TipsSection header="General" tipList={tipsGeneral} />
+          ) : (
+            <></>
+          )}
+          {tipsEarly.length > 0 ? (
+            <TipsSection header="Early Game" tipList={tipsEarly} />
+          ) : (
+            <></>
+          )}
+          {tipsEarly.Mid > 0 ? (
+            <TipsSection header="Mid Game" tipList={tipsMid} />
+          ) : (
+            <></>
+          )}
+          {tipsLate.length > 0 ? (
+            <TipsSection header="Late Game" tipList={tipsLate} />
+          ) : (
+            <></>
+          )}
           <h2>Counters</h2>
-          <TipsSection header="General" tipList={countersGeneral} />
-          <TipsSection header="Early Game" tipList={countersEarly} />
-          <TipsSection header="Mid Game" tipList={countersMid} />
-          <TipsSection header="Late Game" tipList={countersLate} />
+          {countersGeneral.length > 0 ? (
+            <TipsSection header="General" tipList={countersGeneral} />
+          ) : (
+            <></>
+          )}
+          {countersEarly.length > 0 ? (
+            <TipsSection header="Early Game" tipList={countersEarly} />
+          ) : (
+            <></>
+          )}
+          {countersMid.length > 0 ? (
+            <TipsSection header="Mid Game" tipList={countersMid} />
+          ) : (
+            <></>
+          )}
+          {countersLate.length > 0 ? (
+            <TipsSection header="Late Game" tipList={countersLate} />
+          ) : (
+            <></>
+          )}
         </>
       )}
     </div>
