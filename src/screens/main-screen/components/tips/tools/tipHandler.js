@@ -38,7 +38,7 @@ const fetchTipsFS = async (char) => {
       if (data.tips !== undefined) {
         data.tips.forEach((tip) => {
           if (tip.type === "tip") {
-            switch (tip) {
+            switch (tip.time) {
               case "early":
                 tipsEarly.push(tip.data);
                 break;
@@ -52,7 +52,7 @@ const fetchTipsFS = async (char) => {
                 tipsGeneral.push(tip.data);
             }
           } else {
-            switch (tip) {
+            switch (tip.time) {
               case "early":
                 countersEarly.push(tip.data);
                 break;
